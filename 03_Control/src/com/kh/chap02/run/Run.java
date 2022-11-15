@@ -34,7 +34,7 @@ public class Run {
 		//lp.practice10();
 		//lp.practice11();
 		//lp.practice12();
-		//lp.practice13();
+		lp.practice13();
 		//lp.practice14();
 		//lp.practice16();
 		//lp.practice17();

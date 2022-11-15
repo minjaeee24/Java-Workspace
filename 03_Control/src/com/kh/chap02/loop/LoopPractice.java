@@ -221,20 +221,21 @@ public class LoopPractice {
 		
 		System.out.print("숫자 : ");
 		int num = sc.nextInt();
-		int num2 = 0;
 		
 		if(num > 1) {
-			for(int i = 1; i <= num ; i++) {
-				num2 = num/i;
-			}
-			if(num2==1&&num2==num2) {
-				System.out.print("소수입니다.");
-			}else {
-				System.out.print("소수가 아닙니다.");
+			for(int i = 2; i <= num ; i++) {
+				if(num % i == 0) {
+					System.out.print("소수입니다.");
+					break;
+				}else {
+					System.out.print("소수가 아닙니다.");
+					break;
+				}
 			}
 		}else {
 			System.out.print("잘 못 입력하셨습니다.");
 		}
+
 	}
 	
 	public void practice14() {
