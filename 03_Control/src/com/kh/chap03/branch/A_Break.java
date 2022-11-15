@@ -25,7 +25,7 @@ public class A_Break {
 			if(random % 3 == 0) {
 				break;
 			}
-		}
+		} 
 	}
 	
 	public void method2() {
