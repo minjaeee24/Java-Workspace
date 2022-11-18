@@ -67,10 +67,10 @@ public class DimensionPractice {
 
 		for(int i = 0; i < arr.length - 1; i++) {
 			for(int j = 0; j < arr[i].length - 1; j++) {
-					arr[i][j] = (int)(Math.random() * 10 + 1);
-					arr[i][3] += arr[i][j]; // 각 행의 모든 값들의 합
-					arr[3][j] += arr[i][j]; // 각 열의 모든 값들의 합
-					arr[3][3] += arr[i][j] * 2; // 가로 세로의 총 합
+				arr[i][j] = (int)(Math.random() * 10 + 1);
+				arr[i][3] += arr[i][j]; // 각 행의 모든 값들의 합
+				arr[3][j] += arr[i][j]; // 각 열의 모든 값들의 합
+				arr[3][3] += arr[i][j] * 2; // 가로 세로의 총 합
 			}
 		}
 		for(int i = 0; i < arr.length; i++) {
