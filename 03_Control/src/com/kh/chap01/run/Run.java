@@ -11,7 +11,7 @@ public class Run {
 		//ai.method2();
 		//ai.method3();
 		//ai.method4();
-		//ai.method5();
+		ai.method5();
 		//ai.method6();
 		//ai.method7();
 	
@@ -25,7 +25,7 @@ public class Run {
 		//cp.practice1();
 		//cp.practice2();
 		//cp.practice3();
-		cp.practice11();
+		//cp.practice11();
 	
 	}
 	

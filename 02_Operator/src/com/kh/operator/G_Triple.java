@@ -15,7 +15,7 @@ public class G_Triple {
 	
 	public void method1() {
 		
-		// 사용자가 입력한 정수값이 양수인지 아닌지 판별 후 양수라면 양수입니다. 아니라면 양수가 아닙니아를 출력
+		// 사용자가 입력한 정수값이 양수인지 아닌지 판별 후 양수라면 양수입니다. 아니라면 양수가 아닙니다 를 출력
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("정수값을 입력 : ");

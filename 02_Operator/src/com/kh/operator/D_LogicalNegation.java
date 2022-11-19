@@ -5,7 +5,7 @@ public class D_LogicalNegation {
 	/*
 	 * 논리부정연산자 ! (단항연산자)
 	 * 
-	 * !논리갑(true / false)
+	 * !논리값(true / false)
 	 * 
 	 * 논리값을 반대로 바꿔주는 연산자
 	 * 

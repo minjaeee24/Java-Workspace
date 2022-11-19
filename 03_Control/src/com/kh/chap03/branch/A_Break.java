@@ -57,7 +57,7 @@ public class A_Break {
 			System.out.print("양수 입력 : ");
 			int num = sc.nextInt();
 			
-			if(num > 0 ) { // 양수로 제대로 입력한 경우 -> 1~num 출력 후 종
+			if(num > 0 ) { // 양수로 제대로 입력한 경우 -> 1~num 출력 후 종료
 				for(int i = 1; i <= num; i++) {
 					System.out.print(i + " ");
 				}
