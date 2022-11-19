@@ -36,9 +36,10 @@ public class DimensionPractice {
 		for(int i = 0; i < arr.length; i++) {
 			for(int j = 0; j < arr[i].length; j++) {
 				arr[i][j] = value++;
-				System.out.printf("%2d ",arr[i][j]);
+				//System.out.printf("%2d ",arr[i][j]);
 			}
-			System.out.println();
+			printArray(arr); // print 메소드 생성으로 대체
+			//System.out.println();
 		}
 	}
 	
@@ -260,13 +261,14 @@ public class DimensionPractice {
 	}
 	
 	
-//	public void method() {
-//		
-//		for(int i = 0; i < arr.length; i++) {
-//			for(int j = 0; j < arr[i].length; j++) {
-//				System.out.printf("%2d ",arr[i][j]);
-//
-//			}
-//		}
-//	}
+	public void printArray(int[][] arr) {
+		
+		for(int i = 0; i < arr.length; i++) {
+			for(int j = 0; j < arr[i].length; j++) {
+				System.out.printf("%2d ",arr[i][j]);
+
+			}
+			System.out.println();
+		}
+	}
 }

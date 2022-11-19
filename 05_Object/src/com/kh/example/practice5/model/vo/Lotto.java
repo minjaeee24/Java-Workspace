@@ -6,8 +6,14 @@ public class Lotto {
 	
 	{
 		for(int i = 0; i < lotto.length; i++) {
-			lotto[i] = (int)(Math.random()*45+1);									
+			lotto[i] = (int)(Math.random()*45+1);		
+			for(int j = 0; j < i; j++) {
+				if(lotto[i]==lotto[j]) {
+					i--;
+					break;
+				}
 			}
+		}
 	}
 
 	public Lotto() {
@@ -22,8 +28,17 @@ public class Lotto {
 		return lotto;
 	}
 	
-	public int[] information() {
-		return lotto;
+//	public int[] information() {
+//		for(int i = 0; i < lotto.length; i++) {
+//			System.out.println(lotto[i]);
+//		}
+//		return lotto;
+//	}
+	
+	public void information() {
+		for(int i = 0; i < lotto.length; i++) {
+			System.out.print(lotto[i] + " ");
+		}
 	}
 	
 	
