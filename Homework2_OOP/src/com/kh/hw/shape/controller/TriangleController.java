@@ -14,6 +14,7 @@ public class TriangleController {
 	
 	public void paintColor(String color) {
 		s.setColor(color);
+		System.out.println("색이 수정되었습니다.");
 	}
 	
 	public String print() {
