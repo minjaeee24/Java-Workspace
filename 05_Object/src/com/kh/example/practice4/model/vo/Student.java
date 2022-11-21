@@ -12,7 +12,7 @@ public class Student {
 	{
 		grade = 0;
 		classroom = 0;
-		name = "";
+		name = null;
 		height = 0.0;
 		gender = 0;
 		
@@ -66,16 +66,9 @@ public class Student {
 	}
 	
 	// 인포메이션
-	public String information() {
-		return grade+"학년 "+classroom+"반 "+name+"님의 키는 "+height+"cm이고 성별은 "+gender+"입니다.";
+	public void information() {
+		// xxx학생은 x학년 x반이고, 키는 xxx.xcm이며 남(여)학생입니다.
+		System.out.printf("%s학생은 %d학년 %d반이고, 키는 %.1fcm이며 %c학생입니다.", name, grade, classroom, height, gender);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

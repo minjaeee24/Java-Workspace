@@ -11,8 +11,8 @@ public class Run {
 		s.setClassroom(1);
 		s.setName("김민재");
 		s.setHeight(180.0);
-		s.setGender('M');
-		System.out.println(s.information());
+		s.setGender('남');
+		s.information();
 	}
 
 }
