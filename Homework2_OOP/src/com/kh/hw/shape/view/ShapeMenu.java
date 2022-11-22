@@ -12,23 +12,25 @@ public class ShapeMenu {
 	private TriangleController tc = new TriangleController();
 	
 	public void inputMenu() {
+		
 		System.out.println("===== 도형 프로그램 =====");
 		System.out.println("3. 삼각형");
 		System.out.println("4. 사각형");
 		System.out.println("9. 프로그램 종료");
 		System.out.print("메뉴 번호 : ");
 		int menu = sc.nextInt();
-		if(menu == 3) {
-			triangleMenu();
-		}else if(menu == 4) {
-			squareMenu();
-		}else if(menu == 9) {
-			System.out.print("프로그램을 종료합니다.");
-			return;
-		}else {
-			System.out.println("잘못된 번호입니다. 다시 입력하세요.");
-			inputMenu();
-		}
+			if(menu == 3) {
+				triangleMenu();
+			}else if(menu == 4) {
+				squareMenu();
+			}else if(menu == 9) {
+				System.out.print("프로그램을 종료합니다.");
+				return;
+			}else {
+				System.out.println("잘못된 번호입니다. 다시 입력하세요.");
+				inputMenu();
+			}
+		
 	}
 	
 	public void triangleMenu() {
@@ -44,11 +46,12 @@ public class ShapeMenu {
 		}else if(menu == 2) {
 			inputSize(1, 2);
 		}else if(menu == 3) {
-			inputSize(1, 3);
+			printInformation(1);
 		}else if(menu == 9) {
-			inputMenu();
+			return;
+		}else {		
+			triangleMenu();	
 		}
-		triangleMenu();	
 	}
 	
 	public void squareMenu() {
@@ -60,6 +63,19 @@ public class ShapeMenu {
 		System.out.println("9. 메인으로");
 		System.out.print("메뉴 번호 : ");
 		int menu = sc.nextInt();
+		
+			switch(menu) {
+			case 1: inputSize(2, 1); break;
+			case 2:	inputSize(2, 2); break;
+			case 3:	inputSize(2, 3); break;
+			case 4: printInformation(2); break;
+			case 9: return;
+			}
+			squareMenu();
+		
+	}
+		
+	/*	
 		if(menu == 1) {
 			inputSize(2, 1);
 		}else if(menu == 2) {
@@ -70,27 +86,29 @@ public class ShapeMenu {
 			inputSize(2, 4);
 		}else if(menu == 9) {
 			inputMenu();
+		}else {			
+			squareMenu();
 		}
-		squareMenu();
-	}
+	} */
 	
 	public void inputSize(int type, int menuNum) {
+		double d = 0.0;
 		if(type == 1) {
 			if(menuNum == 1) {
 				System.out.print("높이 : ");
 				int height = sc.nextInt();
 				System.out.print("너비 : ");
 				int width = sc.nextInt();
-				System.out.println("삼각형 면적 : "+tc.clacArea(height, width));
+				System.out.print("삼각형 면적 : ");
+				d = tc.clacArea(height, width);
 				
 			}else if(menuNum == 2) {
 				sc.nextLine();
-				System.out.println("색깔을 입력하세요 : ");
+				System.out.print("색깔을 입력하세요 : ");
 				String color = sc.nextLine();
 				tc.paintColor(color);
-			}else if(menuNum == 3) {
-				printInformation(1);
 			}
+			System.out.println(d);
 		}else if(type == 2) {
 			if(menuNum == 1) {
 				System.out.print("높이 : ");
@@ -111,20 +129,21 @@ public class ShapeMenu {
 				System.out.println("색깔을 입력하세요 : ");
 				String color = sc.nextLine();
 				scr.paintColor(color);
-			}else if(menuNum == 4) {
-				printInformation(2);
-				
 			}
 		}	
 			
 	}
 	
 	public void printInformation(int type) {
+		String result = "";
 		if(type == 1) {
-			System.out.println(tc.print());
+			result = tc.print();
+			//System.out.println(tc.print());
 		}else {
-			System.out.println(scr.print());
+			result = scr.print();
+			//System.out.println(scr.print());
 		}
+		System.out.println(result);
 	}
 	
 }

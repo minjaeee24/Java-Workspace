@@ -23,7 +23,9 @@ public class EmployeeController {
 	}
 	public Employee remove(){
 		// 객체 e에 null을 저장하여 객체 삭제
-		return "";
+		Employee e = new Employee();
+		e = null;
+		return e;
 	}
 	public String inform(){
 		// 객체 e가 null이라면 null 반환, 아니라면 사원 정보 반환

@@ -7,9 +7,11 @@ public class TriangleController {
 	private Shape s = new Shape();
 	
 	public double clacArea(double height, double width) {
-		s.setHeight(height);
-		s.setWidth(width);
-		return height * width;
+		s = new Shape(1 , height, width);
+		
+		//s.setHeight(height);
+		//s.setWidth(width);
+		return height * width / 2;
 	}
 	
 	public void paintColor(String color) {

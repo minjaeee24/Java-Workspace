@@ -7,12 +7,17 @@ public class SquareController {
 	private Shape s = new Shape();
 	
 	public double calcPerimeter(double height, double width) {
-		s.setHeight(height);
-		s.setWidth(width);
-		return (height * 2) + (width * 2);
+		s = new Shape(2 , height, width);
+		
+		//s.setHeight(height);
+		//s.setWidth(width);
+		return height * 2 + width * 2;
 	}
 	
 	public double clacArea(double height, double width) {
+		s = new Shape(2 , height, width);
+
+		
 		s.setHeight(height);
 		s.setWidth(width);
 		return height * width;
@@ -24,7 +29,7 @@ public class SquareController {
 	}
 	
 	public String print() {
-		return "사각형" + s.information();
+		return "사각형 " + s.information();
 	}
 	
 	
