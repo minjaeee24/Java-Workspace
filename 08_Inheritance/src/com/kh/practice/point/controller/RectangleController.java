@@ -12,17 +12,16 @@ public class RectangleController {
 		//r.setY(y);
 		//r.setHeight(height);
 		//r.setWidth(width);
-		int area = height * width;
-		return "면적 : "+r.toString()+" / "+area;
+		return "면적 : "+r.toString()+" / "+height * width;
 	}
 	
 	public String calcPerimeter(int x, int y, int height, int width) {
-		r.setX(x);
-		r.setY(y);
-		r.setHeight(height);
-		r.setWidth(width);
-		int peri = 2 * (width + height);
-		return "둘레 : "+r.toString()+" / "+peri;
+		r = new Rectangle(x, y, height, width);
+		//r.setX(x);
+		//r.setY(y);
+		//r.setHeight(height);
+		//r.setWidth(width);
+		return "둘레 : "+r.toString()+" / "+ 2 * (width + height);
 	}
 	
 	
