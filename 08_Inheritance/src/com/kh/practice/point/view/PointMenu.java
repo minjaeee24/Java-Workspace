@@ -12,35 +12,39 @@ public class PointMenu {
 	
 	public void mainMenu() {
 		
-		System.out.println("===== 메뉴 =====");
-		System.out.println("1. 원");
-		System.out.println("2. 사각형");
-		System.out.println("9. 끝내기");
-		System.out.print("메뉴 번호 : ");
-		int menu = sc.nextInt();
-		
-		switch(menu) {
-		case 1 : circleMenu(); break;
-		case 2 : rectangleMenu(); break;
-		default : System.out.println("종료합니다.");
-			return;
+		while(true) {
+			System.out.println("===== 메뉴 =====");
+			System.out.println("1. 원");
+			System.out.println("2. 사각형");
+			System.out.println("9. 끝내기");
+			System.out.print("메뉴 번호 : ");
+			int menu = sc.nextInt();
+			
+			switch(menu) {
+			case 1 : circleMenu(); break;
+			case 2 : rectangleMenu(); break;
+			case 9 : System.out.println("종료합니다.");
+					return;
+			default : System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
+			}
 		}
 	}
 	
 	public void circleMenu() {
-		System.out.println("===== 원 메뉴 =====");
-		System.out.println("1. 원 둘레");
-		System.out.println("2. 원 넓이");
-		System.out.println("9. 메인으로");
-		System.out.print("메뉴 번호 : ");
-		int menu = sc.nextInt();
 		
-		switch(menu) {
-		case 1 : calcCircum(); break;
-		case 2 : calcCircleArea(); break;
-		case 9 : mainMenu();
-		}
-		mainMenu();
+			System.out.println("===== 원 메뉴 =====");
+			System.out.println("1. 원 둘레");
+			System.out.println("2. 원 넓이");
+			System.out.println("9. 메인으로");
+			System.out.print("메뉴 번호 : ");
+			int menu = sc.nextInt();
+			
+			switch(menu) {
+			case 1 : calcCircum(); break;
+			case 2 : calcCircleArea(); break;
+			default : return;
+			}
+		
 	}
 	
 	public void rectangleMenu() {
@@ -54,9 +58,8 @@ public class PointMenu {
 		switch(menu) {
 		case 1 : calcPerimeter(); break;
 		case 2 : calcRectArea(); break;
-		case 9 : mainMenu();
+		default : return;
 		}
-		mainMenu();
 	}
 	
 	public void calcCircum() {
