@@ -30,8 +30,15 @@ public class GalaxyNote9 extends SmartPhone implements NotePen {
 		return true;
 	}
 	
-	public String toString() {
-		return "갤럭시 노트 9은 삼성에서 만들어졌고 제원은 다음과 같다.";
+	public String printInformation() {
+		String result = "갤럭시 노트 9은 삼성에서 만들어졌고 제원은 다음과 같다.\n";
+			   result += makeCall()+"\n";
+			   result += takeCall()+"\n";
+			   result += picture()+"\n";
+			   result += charge()+"\n";
+			   result += touch()+"\n";
+			   result += "블루투스 펜 탑제 여부 : "+bluetoothPen()+"\n";
+		return result;
 	}
 	
 	

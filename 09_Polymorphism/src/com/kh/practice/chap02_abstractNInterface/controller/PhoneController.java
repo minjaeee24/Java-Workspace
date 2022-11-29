@@ -10,14 +10,23 @@ public class PhoneController {
 		Phone[] p = new Phone[2];
 		p[0] = new GalaxyNote9();
 		p[1] = new V40();
-		for(int i = 0; i < p.length; i++) {
-			result[i] = p[i].toString();
-			if(p[i] instanceof GalaxyNote9) {
-				((GalaxyNote9)p[i]).toString();
+		int count = 0;
+		for(Phone phone : p) {
+			if(phone instanceof V40) {
+				result[count++] = ((V40) phone).printInformation();
 			}else {
-				((V40)p[i]).toString();
+				result[count++] = ((GalaxyNote9)phone).printInformation();
 			}
 		}
+		
+//		for(int i = 0; i < p.length; i++) {
+//			result[i] = p[i];
+//			if(p[i] instanceof GalaxyNote9) {
+//				((GalaxyNote9)p[i]).printInformation();
+//			}else {
+//				((V40)p[i]).printInformation();
+//			}
+//		}
 		return result;
 	}
 }

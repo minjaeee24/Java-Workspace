@@ -1,4 +1,4 @@
-package com.kh.chap02_abstractAndinterface.run;
+package com.kh.chap02_abstractAndinterface.part01_basic.run;
 
 import com.kh.chap02_abstractAndinterface.part01_basic.model.vo.*;
 

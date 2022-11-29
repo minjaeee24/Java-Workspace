@@ -30,8 +30,15 @@ public class V40 extends SmartPhone implements NotePen {
 		return false;
 	}
 	
-	public String toString() {
-		return "V40은 LG에서 만들어졌고 제원은 다음과 같다.";
+	public String printInformation() {
+		String result = "V40은 LG에서 만들어졌고 제원은 다음과 같다.\n";
+			   result += makeCall()+"\n";
+			   result += takeCall()+"\n";
+			   result += picture()+"\n";
+			   result += charge()+"\n";
+		   	   result += touch()+"\n";
+			   result += "블루투스 펜 탑제 여부 : "+bluetoothPen()+"\n";
+		return result;
 	}
 	
 	
