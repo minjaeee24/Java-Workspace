@@ -9,20 +9,20 @@ public class TokenController {
 	}
 	
 	public String afterToken(String str) {
-		String a = str;
-		String c = "";
-		StringTokenizer b = new StringTokenizer(a, " ");
-		while(b.hasMoreTokens()) {
-			c += b.nextToken();
+		String full = str;
+		String s = "";
+		StringTokenizer x = new StringTokenizer(full, " ");
+		while(x.hasMoreTokens()) {
+			s += x.nextToken();
 		}
-		return c;
+		return s;
 	}
 	
 	public String firstCap(String input) {
-		String a = input.substring(0, 1).toUpperCase();
-		String b = input.substring(1, input.length());
-		String c = a.concat(b);
-		return c;
+		String head = input.substring(0, 1).toUpperCase();
+		String body = input.substring(1, input.length());
+		String str = head.concat(body);
+		return str;
 	}
 	
 	public int findChar(String input, char one) {
