@@ -7,7 +7,6 @@ import com.kh.practice.numRange.exception.NumRangeException;
 
 public class NumberMenu {
 	
-	NumberController nc = new NumberController();
 	
 	public void menu() {
 		Scanner sc = new Scanner(System.in);
@@ -19,8 +18,10 @@ public class NumberMenu {
 		int num2 = sc.nextInt();
 		
 		try {
-			System.out.printf("%d은(는) %d 의 배수인가 ? ", num1, num2);
-			System.out.println(nc.checkDouble(num1, num2));
+			if(!(0 < num1 && num1 <= 100 && 0 < num2 && num2 <= 100)) { // 예외처리는 여기서 하는게 좋음.
+				throw new NumRangeException("1과 100 사이의 값이 아닙니다.");
+			}
+			System.out.printf("%d은(는) %d 의 배수인가 ? %s \n", num1, num2, new NumberController().checkDouble(num1, num2));
 		}catch(NumRangeException e) {
 			e.printStackTrace();
 		}		

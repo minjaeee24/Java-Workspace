@@ -6,8 +6,8 @@ import com.kh.person.controller.PersonController;
 
 public class PersonMenu {
 
-	Scanner sc = new Scanner(System.in);
-	PersonController pc = new PersonController();
+	private Scanner sc = new Scanner(System.in);
+	private PersonController pc = new PersonController();
 	
 	public void mainMenu() {
 //		학생은 최대 3명까지 저장할 수 있습니다. 현재 저장된 학생은 M명입니다.
@@ -16,14 +16,15 @@ public class PersonMenu {
 //		// personCount()메소드의 반환 값을 이용하여 출력
 
 		while(true) {
-			System.out.println("학생은 최대 3명까지 저장할 수 있습니다.\n현재 저장된 학생은 " + pc.personCount()[0] + "명입니다.");
+			int personCount[] = pc.personCount();
+			System.out.println("학생은 최대 3명까지 저장할 수 있습니다.\n현재 저장된 학생은 " + personCount[0] + "명입니다.");
 			System.out.println("사원은 최대 10명까지 저장할 수 있습니다.\n현재 저장된 사원은 " + pc.personCount()[1] + "명입니다.");
 			System.out.println();
 			System.out.println("1. 학생 메뉴");
 			System.out.println("2. 사원 메뉴");
 			System.out.println("9. 끝내기");
 			System.out.print("메뉴 번호 : ");
-			int num = sc.nextInt();
+			int num = Integer.parseInt(sc.nextLine());
 			
 			switch(num) {
 			case 1 : 
@@ -54,8 +55,7 @@ public class PersonMenu {
 				System.out.println("학생을 담을 수 있는 공간이 꽉 찼기 때문에 학생 추가 메뉴는 더 이상 활성화 되지 않습니다.");
 			}
 			System.out.print("메뉴 번호 : ");
-			int num = sc.nextInt();
-			sc.nextLine();
+			int num = Integer.parseInt(sc.nextLine());
 			
 			switch(num) {
 			case 2 : 
@@ -140,22 +140,21 @@ public class PersonMenu {
 		System.out.print("학생 이름 : ");
 		String name = sc.nextLine();
 		System.out.print("학생 나이 : ");
-		int age = sc.nextInt();
+		int age = Integer.parseInt(sc.nextLine());
 		System.out.print("학생 키 : ");
-		double height = sc.nextDouble();
+		double height = Integer.parseInt(sc.nextLine());
 		System.out.print("학생 몸무게 : ");
 		double weight = sc.nextDouble();
 		System.out.print("학생 학년 : ");
-		int grade = sc.nextInt();
-		sc.nextLine();
+		int grade = Integer.parseInt(sc.nextLine());
 		System.out.print("학생 전공 : ");
 		String major = sc.nextLine();
 		pc.insertStudent(name, age, height, weight, grade, major);
 		
 		if(pc.personCount()[0] < 3) {
 			System.out.print("그만하시려면 N(또는 n), 이어하시려면 아무 키나 누르세요 : ");
-			char a = sc.nextLine().charAt(0);
-			if(a != 'N' && a != 'n') {
+			char a = sc.nextLine().toUpperCase().charAt(0);
+			if(a != 'N') {
 				insertStudent();				
 			}
 		}else if(pc.personCount()[0] == 3){

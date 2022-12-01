@@ -9,20 +9,20 @@ public class PersonController {
 	
 	public int[] personCount() {
 		//각 객체배열에 저장된 객체의 수를 정수배열에 담아 반환하는 메소드
-		int[] count = new int[2];
-		count[0] = 0;
+		int[] arr = new int[2];
+		int count = 0;
 		for(Student a : s) {
 			if(a != null) {
-				count[0]++;
+				arr[0] = ++count;
 			}
 		}
-		count[1] = 0;
+		count = 0;
 		for(Employee b : e) {
 			if(b != null) {
-				count[1]++;
+				arr[1] = ++count;
 			}
 		}
-		return count;
+		return arr;
 	}
 	
 	public void insertStudent(String name, int age, double height, double weight, int grade, String major) {
