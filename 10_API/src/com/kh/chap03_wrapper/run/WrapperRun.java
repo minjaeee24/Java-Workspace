@@ -1,4 +1,4 @@
-package com.kh.chap03_wtapper.run;
+package com.kh.chap03_wrapper.run;
 
 public class WrapperRun {
 
