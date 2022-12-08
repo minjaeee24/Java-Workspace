@@ -2,6 +2,8 @@ package com.kh.practice.map.view;
 
 import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
 
 import com.kh.practice.map.controller.MemberController;
 import com.kh.practice.map.model.vo.Member;
@@ -75,7 +77,8 @@ public class MemberMenu {
 			String password = sc.nextLine();
 			System.out.print("이름 : ");
 			String name = sc.nextLine();
-			if (mc.joinMembership(id, new Member(password, name))) {
+			boolean result = mc.joinMembership(id, new Member(password, name));
+			if (result) {
 				System.out.println("성공적으로 회원가입 완료하였습니다.");
 				return;
 			} else {
@@ -90,10 +93,11 @@ public class MemberMenu {
 			String id = sc.nextLine();
 			System.out.print("비밀번호 : ");
 			String password = sc.nextLine();
-			if (mc.login(id, password) == null) {
+			String name = mc.login(id, password);
+			if (name == null) {
 				System.out.println("틀린 아이디 또는 비밀번호입니다. 다시 입력해주세요.");
 			} else {
-				System.out.printf("%s님, 환영합니다!\n", mc.login(id, password));
+				System.out.printf("%s님, 환영합니다!\n", name);
 				return;
 			}
 		}
@@ -140,6 +144,12 @@ public class MemberMenu {
 	public void sameName() {
 		System.out.print("검색할 이름 : ");
 		String name = sc.nextLine();
+		TreeMap tm = mc.sameName(name);
+		
+		Set<Entry<String, String>> entry = tm.entrySet();
+		for(Entry<String, String> e : entry) {
+			System.out.println(e.getValue() + " - " + e.getKey());
+		}
 		
 	}
 }
