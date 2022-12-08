@@ -16,7 +16,7 @@ public class Client {
 	
 	public void clientStart() {
 		// 1) 서버의 IP주소와 서버가 정한 "포트번호"를 매개변수로 하여 "클라이언트용 소켓" 객체 생성.
-		int port = 30027;
+		int port = 6024;
 		String str = null;
 		String serverIP = null;
 		Socket socket = null;
